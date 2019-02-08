@@ -39,6 +39,9 @@ const Header = (props) => {
           </View>
         </View>
       </CardSection>
+      <View style={{ alignItems: 'center' }}>
+          <Text style={{ color: '#daebe9', fontSize: 10 }}>{props.pageName}</Text>
+        </View>
     </View>
   );
 };

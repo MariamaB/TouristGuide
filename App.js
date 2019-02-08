@@ -8,23 +8,23 @@ import LocationList from './src/components/locations/LocationList';
 export default class App extends Component {
  tabs = [
    {
-      key: 'games',
+      key: 'hotels',
       icon: 'gamepad-variant',
-      label: 'Games',
-      barColor: '#388E3C',
+      label: 'Hotels',
+      barColor: '#B71C1C',
       pressColor: 'rgba(255, 255, 255, 0.16)'
   },
     {
-      key: 'movies-tv',
+      key: 'home',
       icon: 'movie',
-      label: 'Movies & TV',
-      barColor: '#B71C1C',
+      label: 'Home',
+      barColor: '#92b9b5',
       pressColor: 'rgba(255, 255, 255, 0.16)'
     },
     {
-      key: 'music',
+      key: 'flights',
       icon: 'music-note',
-      label: 'Music',
+      label: 'Flights',
       barColor: '#E64A19',
       pressColor: 'rgba(255, 255, 255, 0.16)'
     }
@@ -34,16 +34,14 @@ export default class App extends Component {
      <Icon isActive={isActive} size={24} color="white" name={icon} />
   )
 
-  renderTab = ({ tab, isActive }) => {
-   return (
+  renderTab = ({ tab, isActive }) => (
     <FullTab
       isActive={isActive}
       key={tab.key}
       label={tab.label}
       renderIcon={this.renderIcon(tab.icon)}
     />
-  );    
-}
+  )
 
   // renderTab = () => {
   //   return <View />;
@@ -56,15 +54,17 @@ export default class App extends Component {
           headerTitle={'Tourist Guide'}
           headerText={'Sierra Leone'}
           picSrc={'http://sierraleonenationaltouristboard.com/wp-content/uploads/2018/07/logo.png'}
+          pageName={'Home'}
         />
+        
         <LocationList />
+
         <BottomNavigation
           onTabPress={activeTab => this.setState({ activeTab })}
           renderTab={this.renderTab}
           tabs={this.tabs}
         />
       </View>
-
     );
   }
 }
