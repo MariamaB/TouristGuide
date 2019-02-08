@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import { View, Icon } from 'react-native';
+import { View } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import BottomNavigation, { FullTab } from 'react-native-material-bottom-navigation';
 import { Header } from './src/components/common/Header';
 import LocationList from './src/components/locations/LocationList';
 
 export default class App extends Component {
-  tabs = [
-    {
+ tabs = [
+   {
       key: 'games',
       icon: 'gamepad-variant',
       label: 'Games',
       barColor: '#388E3C',
       pressColor: 'rgba(255, 255, 255, 0.16)'
-    },
+  },
     {
       key: 'movies-tv',
       icon: 'movie',
@@ -27,20 +28,26 @@ export default class App extends Component {
       barColor: '#E64A19',
       pressColor: 'rgba(255, 255, 255, 0.16)'
     }
-  ]
+   ]
 
   renderIcon = icon => ({ isActive }) => (
-    <Icon isActive={isActive} size={24} color="white" name={icon} />
+     <Icon isActive={isActive} size={24} color="white" name={icon} />
   )
 
-  renderTab = ({ tab, isActive }) => (
+  renderTab = ({ tab, isActive }) => {
+   return (
     <FullTab
       isActive={isActive}
       key={tab.key}
       label={tab.label}
       renderIcon={this.renderIcon(tab.icon)}
     />
-  )
+  );    
+}
+
+  // renderTab = () => {
+  //   return <View />;
+  // }
 
   render() {
     return (

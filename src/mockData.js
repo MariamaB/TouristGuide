@@ -2,9 +2,9 @@
 const data = [
   {
     id: 1,
-    title: 'Banana Islands',
-    content: 'The Banana Islands are a group of islands that lie off the coast,south-west of the Freetown Peninsula in the Western Area of Sierra Leone.',
-    image: 'https://www.thestar.com/content/dam/thestar/life/travel/2016/06/18/7-sierra-leone-gems/4-banana-island.jpg'
+    title: 'Beaches',
+    content: 'Dotted along the Atlantic Ocean are some of the world’s most beautiful pristine, white and unspoilt beaches.s',
+    image: 'https://www.lupinetravelwestafrica.com/images/group-tours/sierra_leone-liberia/river-beach_1.jpg'
   },
   {
     id: 2,
@@ -14,9 +14,9 @@ const data = [
   },
   {
     id: 3,
-    title: 'Beaches',
-    content: 'Dotted along the Atlantic Ocean are some of the world’s most beautiful pristine, white and unspoilt beaches.s',
-    image: 'https://www.lupinetravelwestafrica.com/images/group-tours/sierra_leone-liberia/river-beach_1.jpg'
+    title: 'Banana Islands',
+    content: 'The Banana Islands are a group of islands that lie off the coast,south-west of the Freetown Peninsula in the Western Area of Sierra Leone.',
+    image: 'https://www.thestar.com/content/dam/thestar/life/travel/2016/06/18/7-sierra-leone-gems/4-banana-island.jpg'
   },
   {
     id: 4,
