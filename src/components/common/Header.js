@@ -13,12 +13,20 @@ const Header = (props) => {
     textStyle
   } = styles;
 
+  const { 
+    // headerColor, 
+    headerText, 
+    headerTitle, 
+    picSrc, 
+    pageName 
+  } = props;
+
   return (
     <View style={{ backgroundColor: props.backgroundColor }}>
       <CardSection >
         <View style={headerContentStyles}>
-          <Text style={headerTextStyle}>{props.headerTitle}</Text>
-          <Text style={textStyle}>{props.headerText}</Text>
+          <Text style={headerTextStyle}>{headerTitle}</Text>
+          <Text style={textStyle}>{headerText}</Text>
         </View>
         <View style={thumbnailContainerStyle}>
           <View
@@ -33,14 +41,14 @@ const Header = (props) => {
             }}
           >
             <Image
-              source={{ uri: props.picSrc }}
+              source={{ uri: picSrc }}
               style={thumbnailStyle}
             />
           </View>
         </View>
       </CardSection>
       <View style={{ alignItems: 'center' }}>
-          <Text style={{ color: '#daebe9', fontSize: 10 }}>{props.pageName}</Text>
+          <Text style={{ color: '#daebe9', fontSize: 10 }}>{pageName}</Text>
         </View>
     </View>
   );
