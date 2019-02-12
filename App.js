@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import BottomNavigation, { FullTab } from 'react-native-material-bottom-navigation';
+// import Toast from 'react-native-simple-toast';
 import { Header } from './src/components/common/Header';
-import LocationList from './src/components/locations/LocationList';
+// import LocationList from './src/components/locations/LocationList';
+import HotelList from './src/components/hotels/HotelList';
+
 
 export default class App extends Component {
+  state = {
+    activeTab: 'home'
+   };
  tabs = [
    {
       key: 'hotels',
@@ -29,6 +35,7 @@ export default class App extends Component {
       pressColor: 'rgba(255, 255, 255, 0.16)'
     }
    ]
+
 
   renderIcon = icon => ({ isActive }) => (
      <Icon isActive={isActive} size={24} color="white" name={icon} />
@@ -54,12 +61,16 @@ export default class App extends Component {
           headerTitle={'Tourist Guide'}
           headerText={'Sierra Leone'}
           picSrc={'http://sierraleonenationaltouristboard.com/wp-content/uploads/2018/07/logo.png'}
-          pageName={'Home'}
+          pageName={this.state.tabActive}
+          backgroundColor={'#B71C1C'}
+          //  '#A3CECA'
         />
         
-        <LocationList />
+  
+        <HotelList />
+        {/* <LocationList /> */}
 
-      
+
         <BottomNavigation
           onTabPress={activeTab => this.setState({ activeTab })}
           renderTab={this.renderTab}
