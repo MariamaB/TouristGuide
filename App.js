@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import BottomNavigation, { FullTab } from 'react-native-material-bottom-navigation';
 import { Header } from './src/components/common/Header';
 import LocationList from './src/components/locations/LocationList';
 
 export default class App extends Component {
+  state = {
+    activeTab: 'home'
+  }
+
+  color = 'A3CECA'
+
  tabs = [
    {
       key: 'hotels',
@@ -43,9 +49,22 @@ export default class App extends Component {
     />
   )
 
-  // renderTab = () => {
-  //   return <View />;
-  // }
+  renderView = () => {
+    switch (this.state.activeTab) {
+      case 'home':
+      this.color = '#A3CECA';
+        return <LocationList />;
+      case 'hotels':
+      this.color = '#B71C1C';
+        return <View><Text>{this.state.activeTab}</Text></View>;
+      case 'flights':
+      this.color = '#E64A19';
+        return <View><Text>{this.state.activeTab}</Text></View>;
+      default:
+      this.color = '#A3CECA';
+        return <LocationList />;
+    }
+  }
 
   render() {
     return (
@@ -53,22 +72,24 @@ export default class App extends Component {
         <Header
           headerTitle={'Tourist Guide'}
           headerText={'Sierra Leone'}
+          headerColor={'A3CECA'}
           picSrc={'http://sierraleonenationaltouristboard.com/wp-content/uploads/2018/07/logo.png'}
-          pageName={'Home'}
+          pageName={this.state.activeTab}
         />
-        
-        <LocationList />
 
+        {this.renderView()}
+        
         <BottomNavigation
-          onTabPress={activeTab => this.setState({ activeTab })}
+          onTabPress={newTab => this.setState({ activeTab: newTab.key })}
+          activeTab={this.state.activeTab}
           renderTab={this.renderTab}
           tabs={this.tabs}
+          // useLayoutAnimation
         />
       </View>
     );
   }
 }
-
 
 // const styles = StyleSheet.create({
 //   container: {
