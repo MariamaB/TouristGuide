@@ -17,12 +17,12 @@ const Header = (props) => {
     // headerColor, 
     headerText, 
     headerTitle, 
-    picSrc, 
-    pageName 
+    picSrc,
+    headerColor 
   } = props;
 
   return (
-    <View style={{ backgroundColor: props.backgroundColor }}>
+    <View style={{ backgroundColor: headerColor }}>
       <CardSection >
         <View style={headerContentStyles}>
           <Text style={headerTextStyle}>{headerTitle}</Text>
@@ -47,9 +47,6 @@ const Header = (props) => {
           </View>
         </View>
       </CardSection>
-      <View style={{ alignItems: 'center' }}>
-          <Text style={{ color: '#daebe9', fontSize: 10 }}>{pageName}</Text>
-        </View>
     </View>
   );
 };

@@ -4,43 +4,41 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import BottomNavigation, { FullTab } from 'react-native-material-bottom-navigation';
 // import Toast from 'react-native-simple-toast';
 import { Header } from './src/components/common/Header';
-// import LocationList from './src/components/locations/LocationList';
+import LocationList from './src/components/locations/LocationList';
 import HotelList from './src/components/hotels/HotelList';
 
 
 export default class App extends Component {
   state = {
-    activeTab: 'home'
-
+    activeTab: 'home',
+    headerColor: ''
   }
 
-  color = 'A3CECA'
+color = '#A3CECA'
 
-
- tabs = [
+tabs = [
+  {
+     key: 'hotels',
+     icon: 'gamepad-variant',
+     label: 'Hotels',
+     barColor: '#B71C1C',
+     pressColor: 'rgba(255, 255, 255, 0.16)',
+ },
    {
-      key: 'hotels',
-      icon: 'gamepad-variant',
-      label: 'Hotels',
-      barColor: '#B71C1C',
-      pressColor: 'rgba(255, 255, 255, 0.16)',
-  },
-    {
-      key: 'home',
-      icon: 'movie',
-      label: 'Home',
-      barColor: '#92b9b5',
-      pressColor: 'rgba(255, 255, 255, 0.16)'
-    },
-    {
-      key: 'flights',
-      icon: 'music-note',
-      label: 'Flights',
-      barColor: '#E64A19',
-      pressColor: 'rgba(255, 255, 255, 0.16)'
-    }
-   ]
-
+     key: 'home',
+     icon: 'movie',
+     label: 'Home',
+     barColor: '#92b9b5',
+     pressColor: 'rgba(255, 255, 255, 0.16)'
+   },
+   {
+     key: 'flights',
+     icon: 'music-note',
+     label: 'Flights',
+     barColor: '#E64A19',
+     pressColor: 'rgba(255, 255, 255, 0.16)'
+   }
+  ]
 
   renderIcon = icon => ({ isActive }) => (
      <Icon isActive={isActive} size={24} color="white" name={icon} />
@@ -62,7 +60,7 @@ export default class App extends Component {
         return <LocationList />;
       case 'hotels':
       this.color = '#B71C1C';
-        return <View><Text>{this.state.activeTab}</Text></View>;
+        return <HotelList />;
       case 'flights':
       this.color = '#E64A19';
         return <View><Text>{this.state.activeTab}</Text></View>;
@@ -72,20 +70,29 @@ export default class App extends Component {
     }
   }
 
+  renderHeaderColor() {
+    if (this.state.activeTab === 'home') {
+      return '#A3CECA';
+    }
+    if (this.state.activeTab === 'hotels') {
+      return '#B71C1C';
+    }
+    if (this.state.activeTab === 'flights') {
+      return '#E64A19';
+    }
+  }
+
   render() {
     return (
       <View style={{ flex: 1 }}>
         <Header
           headerTitle={'Tourist Guide'}
           headerText={'Sierra Leone'}
-          headerColor={'A3CECA'}
           picSrc={'http://sierraleonenationaltouristboard.com/wp-content/uploads/2018/07/logo.png'}
-          pageName={this.state.activeTab}
-          backgroundColor={'#B71C1C'}
+          headerColor={this.renderHeaderColor()}
         />
 
         {this.renderView()}
-          //  '#A3CECA'
       
         <BottomNavigation
           onTabPress={newTab => this.setState({ activeTab: newTab.key })}
