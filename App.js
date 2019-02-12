@@ -18,7 +18,7 @@ export default class App extends Component {
       icon: 'gamepad-variant',
       label: 'Hotels',
       barColor: '#B71C1C',
-      pressColor: 'rgba(255, 255, 255, 0.16)'
+      pressColor: 'rgba(255, 255, 255, 0.16)',
   },
     {
       key: 'home',
