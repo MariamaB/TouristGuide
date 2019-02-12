@@ -22,7 +22,7 @@ const Header = (props) => {
   } = props;
 
   return (
-    <View style={{ backgroundColor: 'A3CECA' }}>
+    <View style={{ backgroundColor: props.backgroundColor }}>
       <CardSection >
         <View style={headerContentStyles}>
           <Text style={headerTextStyle}>{headerTitle}</Text>
@@ -36,8 +36,8 @@ const Header = (props) => {
               shadowColor: '#000',
               shadowOffset: { width: 0, height: 2 },
               shadowOpacity: 0.2,
-              elevation: 10,
-              zIndex: 1
+              elevation: 5,
+              backgroundColor: '#000'
             }}
           >
             <Image
@@ -73,6 +73,8 @@ const styles = {
   thumbnailStyle: {
     width: 100,
     height: 50,
+    elevation: 11,
+              backgroundColor: '#000'
   },
   thumbnailContainerStyle: {
     marginLeft: 10,

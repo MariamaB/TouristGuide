@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
 // import Toast from 'react-native-simple-toast';
 import { data } from '../../mockData/locationData';
-import LocationCard from './LocationCard.js';
+import LocationCard from './LocationCard';
 
 
 class LocationList extends Component {
