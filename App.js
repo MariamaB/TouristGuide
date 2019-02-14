@@ -88,7 +88,7 @@ tabs = [
         <Header
           headerTitle={'Tourist Guide'}
           headerText={'Sierra Leone'}
-          picSrc={'http://sierraleonenationaltouristboard.com/wp-content/uploads/2018/07/logo.png'}
+          picSrc={'https://www.designtagebuch.de/wp-content/uploads/mediathek//sierra-leone-tourism-logo-210x210.png'}
           headerColor={this.renderHeaderColor()}
         />
 

@@ -10,6 +10,7 @@ const Header = (props) => {
     headerContentStyles,
     headerTextStyle,
     thumbnailContainerStyle,
+    spaceholderStyle,
     textStyle
   } = styles;
 
@@ -24,16 +25,21 @@ const Header = (props) => {
   return (
     <View style={{ backgroundColor: headerColor }}>
       <CardSection >
+           
+      <View style={spaceholderStyle} />
+
         <View style={headerContentStyles}>
           <Text style={headerTextStyle}>{headerTitle}</Text>
           <Text style={textStyle}>{headerText}</Text>
         </View>
+
         <View style={thumbnailContainerStyle}>
             <Image
               source={{ uri: picSrc }}
               style={thumbnailStyle}
             />
         </View>
+        <View style={spaceholderStyle} />
       </CardSection>
     </View>
   );
@@ -53,13 +59,14 @@ const styles = {
     position: 'relative'
   },
   thumbnailStyle: {
-    width: 90,
-    height: 40,
+    width: 60,
+    height: 30,
   },
   thumbnailContainerStyle: {
-    marginLeft: 10,
+    // marginLeft: 10,
     alignItems: 'center',
-    padding: 10,
+    justifyContent: 'center',
+    // padding: 15,
     flex: 1,
     width: 'auto',
     height: 'auto',
@@ -73,15 +80,21 @@ const styles = {
   headerContentStyles: {
     flexDirection: 'column',
     justifyContent: 'space-around',
-    flex: 2,
+    flex: 3,
+    // backgroundColor: '#30a9d8'
+  },
+  spaceholderStyle: {
+    flex: 0.5,
+    // backgroundColor: '#ffffff'
   },
   headerTextStyle: {
     fontWeight: 'bold',
-    fontSize: 30,
-    marginLeft: 20
+    fontSize: 20,
+    // marginLeft: 20
   },
   textStyle: {
-    marginLeft: 20,
+    // marginLeft: 20,
+    fontSize: 10
   }
 
 };
