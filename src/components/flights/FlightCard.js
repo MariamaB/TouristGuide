@@ -4,21 +4,48 @@ import { Card, CardSection } from '../common';
 
 
 const FlightCard = ({ flight }) => {
-    const { image, title, content } = flight;
-    const { imageStyle, titleTextStyle, textContainerStyle, contentTextStyle } = styles;
+    const { logo, title, times, icon, price } = flight;
+    const { logoStyle, iconStyle, titleTextStyle, detailsContainerStyle, detailsStyle, priceContainerStyle } = styles;
     return (
         <Card>
             <CardSection>
-                <Image
-                    style={imageStyle}
-                    source={{ uri: image }}
-                />
+                <View style={titleTextStyle}>
+                    <Text>{title}</Text>
+                </View>
             </CardSection>
 
             <CardSection>
-                <View style={textContainerStyle}>
-                    <Text style={titleTextStyle}>{title}</Text>
-                    <Text style={contentTextStyle}>{content}</Text>
+                <View style={detailsContainerStyle}>
+
+                <View style={detailsStyle}>
+                    <Image style={logoStyle} source={{ uri: logo }} />
+                    <Text> {times.startlocation.depart} </Text>
+                    <Text> TXL </Text>
+                    <Text style={{ lineHeight: 5 }}> {} </Text>
+                    <Text> FNA </Text>
+                    <Text>{times.startlocation.arrive}</Text>
+                </View>
+
+                <View style={detailsStyle}>
+                    <Image style={logoStyle} source={{ uri: logo }} />
+                    <Text> {times.destinylocation.depart} </Text>
+                    <Text> FNA </Text>
+                    <Text style={{ lineHeight: 5 }} />
+                    <Text> TXL </Text>
+                    <Text>{times.destinylocation.arrive}</Text>
+                </View>
+                </View>
+            </CardSection>
+
+            <CardSection>
+                <View style={priceContainerStyle}>
+                <View>
+                    <Image style={iconStyle} source={{ uri: icon }} />
+                    <Text> {price.total} </Text>
+                </View>
+                <View>
+                    <Text> {price.single} </Text>
+                </View>
                 </View>
             </CardSection>
         </Card>
@@ -28,21 +55,30 @@ const FlightCard = ({ flight }) => {
 
 const styles = {
 
-    imageStyle: {
-        height: 200,
-        flex: 1,
-        width: null
+    titleTextStyle: {
+        // fontWeight: 'bold'
     },
-    textContainerStyle: {
+    detailsContainerStyle: {
         flexDirection: 'column',
         justifyContent: 'space-around'
     },
-    titleTextStyle: {
-        fontWeight: 'bold'
+    detailsStyle: {
+        flexDirection: 'row',
+        justifyContent: 'space-around'
     },
-    contentTextStyle: {
-        fontSize: 7
-    }
+    logoStyle: {
+        height: 20,
+        width: null
+    },
+    priceContainerStyle: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+    },
+    iconStyle: {
+        height: 30,
+        width: null
+    },
+   
 };
 
 export default FlightCard;

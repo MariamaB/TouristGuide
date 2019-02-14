@@ -17,15 +17,13 @@ const data = [
       },
       price: {
         single: '680.00 €',
-        Total: '3400.00 €'
+        total: '3400.00 €'
       }
     },
     {
       id: 2,
       title: 'Lufthansa',
       logo: 'https://www.designtagebuch.de/wp-content/uploads/mediathek//2017/10/lufthansa-kranich.png',
-      // https://magazine.workgenius.com/wp-content/uploads/Lufthansa-Logo-fly-e1458051070187.png
-      // https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/85/e1/be/85e1be50-cd0d-b185-f74e-c532a2f8ebc3/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/1200x630wa.png
       icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHHnc28Ifj7f1FcHAKlGC_GkBy79hH26hRo7X6kaO33C6OOb7W',
       times: {
         startlocation: {
@@ -39,7 +37,7 @@ const data = [
       },
       price: {
         single: '748.00 €',
-        Total: '3740.00 €'
+        total: '3740.00 €'
       }
     },
     {
@@ -59,7 +57,7 @@ const data = [
       },
       price: {
         single: '957.00 €',
-        Total: '4785.00 €'
+        total: '4785.00 €'
       }
     },
     {
@@ -79,7 +77,7 @@ const data = [
       },
       price: {
         single: '1037.00 €',
-        Total: '5180.00 €'
+        total: '5180.00 €'
       }
     },
     {
@@ -99,7 +97,7 @@ const data = [
       },
       price: {
         single: '720.00 €',
-        Total: '2930.00 €'
+        total: '2930.00 €'
       }
     },
   ];
