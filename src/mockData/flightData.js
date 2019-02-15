@@ -4,7 +4,7 @@ const data = [
       id: 1,
       title: 'Brüssels Airlines',
       logo: 'http://web.brusselsairlines.com/facebook/image.gif',
-      icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHHnc28Ifj7f1FcHAKlGC_GkBy79hH26hRo7X6kaO33C6OOb7W',
+      icon: 'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/icon.png',
       times: {
         startlocation: {
             depart: '08:50 ',
@@ -24,7 +24,7 @@ const data = [
       id: 2,
       title: 'Lufthansa',
       logo: 'https://www.designtagebuch.de/wp-content/uploads/mediathek//2017/10/lufthansa-kranich.png',
-      icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHHnc28Ifj7f1FcHAKlGC_GkBy79hH26hRo7X6kaO33C6OOb7W',
+      icon: 'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/icon.png',
       times: {
         startlocation: {
             depart: '06:50 ',
@@ -43,12 +43,12 @@ const data = [
     {
       id: 3,
       title: 'Turkish Airlines',
-      logo: 'https://i0.wp.com/yt3.ggpht.com/-5WZWgQM3QlA/AAAAAAAAAAI/AAAAAAAAAAA/eoTNvlDigsU/s900-c-k-no/photo.jpg?w=600',
-      icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHHnc28Ifj7f1FcHAKlGC_GkBy79hH26hRo7X6kaO33C6OOb7W',
+      logo: 'http://senconexpo.com/en/wp-content/uploads/2018/10/thy-icon.jpg',
+      icon: 'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/icon.png',
       times: {
         startlocation: {
-            start: '06:50 ',
-            end: '17:45'
+          depart: '06:50',
+          arrive: '17:45'
         },
         destinylocation: {
             depart: '01:55',
@@ -63,8 +63,8 @@ const data = [
     {
       id: 4,
       title: 'Swiss Airlines',
-      logo: 'https://dwglogo.com/wp-content/uploads/2017/12/Swiss_International_Air_Lines_vector_logo.png',
-      icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHHnc28Ifj7f1FcHAKlGC_GkBy79hH26hRo7X6kaO33C6OOb7W',
+      logo: 'https://www.xing.com/img/custom/cp/assets/logo/a/c/0/10944/square_512px/SWISS_Logo.jpg',
+      icon: 'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/icon.png',
       times: {
         startlocation: {
             depart: '15:45 ',
@@ -84,7 +84,7 @@ const data = [
       id: 5,
       title: 'KLM Airlines',
       logo: 'https://images.ctfassets.net/biom0eqyyi6b/97U2UMaU9y6eWgu8Q6g0A/65990d70bc3bc85e0e7efb517520c3d2/KLM.png',
-      icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHHnc28Ifj7f1FcHAKlGC_GkBy79hH26hRo7X6kaO33C6OOb7W',
+      icon: 'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/icon.png',
       times: {
         startlocation: {
             depart: '14:10 ',

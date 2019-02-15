@@ -11,7 +11,7 @@ import FlightList from './src/components/flights/FlightList';
 
 export default class App extends Component {
   state = {
-    activeTab: 'home',
+    activeTab: 'flights',
   }
 
 color = '#A3CECA'
@@ -84,9 +84,15 @@ tabs = [
     }
   }
 
+  renderAppBackgroundColor() {
+    if (this.state.activeTab === 'flights') {
+      return '#562151';
+      }
+  }
+
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: this.renderAppBackgroundColor() }}>
         <Header
           headerTitle={'Tourist Guide'}
           headerText={'Sierra Leone'}
@@ -94,9 +100,9 @@ tabs = [
           headerColor={this.renderHeaderColor()}
           headerTextColor={this.renderHeaderTextColor()}
         />
+  
+            {this.renderView()}
 
-        {this.renderView()}
-      
         <BottomNavigation
           onTabPress={newTab => this.setState({ activeTab: newTab.key })}
           activeTab={this.state.activeTab}
@@ -104,8 +110,13 @@ tabs = [
           tabs={this.tabs}
           useLayoutAnimation
         />
-      </View>
-    );
+    </View>
+   );
   }
 }
 
+// const styles = {
+//   mainContentView:
+//     padding: 5
+//   }
+// };

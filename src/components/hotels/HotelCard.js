@@ -14,6 +14,7 @@ const HotelCard = ({ hotel }) => {
     } = styles;
     return (
         <Card>
+            <View style={{ backgroundColor: '#fff' }}>
             <CardSection>
                 <Image
                     style={imageStyle}
@@ -39,6 +40,7 @@ const HotelCard = ({ hotel }) => {
             <CardSection>
                 <Button>{'View Deals'}</Button>
             </CardSection>
+            </View>
         </Card>
 
     );

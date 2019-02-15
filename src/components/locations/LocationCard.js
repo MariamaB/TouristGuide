@@ -8,6 +8,7 @@ const LocationCard = ({ location }) => {
     const { imageStyle, titleTextStyle, textContainerStyle, contentTextStyle } = styles;
     return (
         <Card>
+             <View style={{ backgroundColor: '#fff' }}>
             <CardSection>
                 <Image
                     style={imageStyle}
@@ -21,6 +22,7 @@ const LocationCard = ({ location }) => {
                     <Text style={contentTextStyle}>{content}</Text>
                 </View>
             </CardSection>
+            </View>
         </Card>
 
     );

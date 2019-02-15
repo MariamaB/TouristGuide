@@ -24,7 +24,6 @@ class FlightList extends Component {
             <ScrollView>
                 {this.renderflights()}
             </ScrollView>
-
         );
     }
 }

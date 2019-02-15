@@ -23,8 +23,7 @@ const Header = (props) => {
 
   return (
     <View style={{ backgroundColor: headerColor }}>
-      <CardSection >
-           
+      <CardSection >   
       <View style={spaceholderStyle} />
 
         <View style={headerContentStyles}>

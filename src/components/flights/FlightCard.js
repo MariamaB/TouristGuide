@@ -5,49 +5,59 @@ import { Card, CardSection } from '../common';
 
 const FlightCard = ({ flight }) => {
     const { logo, title, times, icon, price } = flight;
-    const { logoStyle, iconStyle, titleTextStyle, detailsContainerStyle, detailsStyle, priceContainerStyle } = styles;
+    const { 
+        logoStyle, 
+        iconStyle, 
+        textStyle, 
+        detailsContainerStyle, 
+        detailsStyle, 
+        priceContainerStyle
+    } = styles;
+
     return (
         <Card>
+            <View style={{ backgroundColor: '#fff' }} >
             <CardSection>
-                <View style={titleTextStyle}>
+                <View style={{ flex: 1 }}>
+                <View>
                     <Text>{title}</Text>
                 </View>
-            </CardSection>
-
-            <CardSection>
+            
                 <View style={detailsContainerStyle}>
 
                 <View style={detailsStyle}>
                     <Image style={logoStyle} source={{ uri: logo }} />
-                    <Text> {times.startlocation.depart} </Text>
+                    <Text style={textStyle}> {times.startlocation.depart} </Text>
                     <Text> TXL </Text>
-                    <Text style={{ lineHeight: 5 }}> {} </Text>
+                    <Text style={{ lineHeight: 5 }}>{}</Text>
                     <Text> FNA </Text>
-                    <Text>{times.startlocation.arrive}</Text>
+                    <Text style={textStyle} >{times.startlocation.arrive}</Text>
                 </View>
 
                 <View style={detailsStyle}>
                     <Image style={logoStyle} source={{ uri: logo }} />
-                    <Text> {times.destinylocation.depart} </Text>
+                    <Text style={textStyle}> {times.destinylocation.depart} </Text>
                     <Text> FNA </Text>
-                    <Text style={{ lineHeight: 5 }} />
+                    <Text style={{ lineHeight: 5 }}>{}</Text>
                     <Text> TXL </Text>
-                    <Text>{times.destinylocation.arrive}</Text>
+                    <Text style={textStyle}>{times.destinylocation.arrive}</Text>
+                </View>
                 </View>
                 </View>
             </CardSection>
 
             <CardSection>
                 <View style={priceContainerStyle}>
-                <View>
+                <View style={{ flexDirection: 'row', padding: 5 }}>
                     <Image style={iconStyle} source={{ uri: icon }} />
-                    <Text> {price.total} </Text>
+                    <Text style={{ fontSize: 10 }}> {price.total} </Text>
                 </View>
                 <View>
-                    <Text> {price.single} </Text>
+                    <Text style={{ fontWeight: 'bold', fontSize: 18, color: '#000' }}> {price.single} </Text>
                 </View>
                 </View>
             </CardSection>
+            </View>
         </Card>
 
     );
@@ -55,28 +65,39 @@ const FlightCard = ({ flight }) => {
 
 const styles = {
 
-    titleTextStyle: {
-        // fontWeight: 'bold'
+    textStyle: {
+        color: '#000',
+        fontWeight: 'bold'
     },
     detailsContainerStyle: {
+        // flex: 1,
         flexDirection: 'column',
-        justifyContent: 'space-around'
+            // backgroundColor: '#ffccff',
+        justifyContent: 'space-around',
+        height: 90,
+        padding: 10
     },
     detailsStyle: {
         flexDirection: 'row',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        // backgroundColor: '#66ff33'
     },
     logoStyle: {
         height: 20,
-        width: null
+        width: 20
     },
     priceContainerStyle: {
+        padding: 10,
         flexDirection: 'row',
         justifyContent: 'flex-end',
+        alignItems: 'center',
+        flex: 1,
+        // backgroundColor: '#66ff33'
     },
     iconStyle: {
-        height: 30,
-        width: null
+        height: 10,
+        width: 10,
+   
     },
    
 };
