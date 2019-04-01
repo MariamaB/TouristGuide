@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import BottomNavigation, { FullTab } from 'react-native-material-bottom-navigation';
 // import Toast from 'react-native-simple-toast';
 import { Header } from './src/components/common/Header';
@@ -19,21 +19,21 @@ color = '#A3CECA'
 tabs = [
   {
      key: 'hotels',
-     icon: 'gamepad-variant',
+     icon: 'building',
      label: 'Hotels',
      barColor: '#7FCD56',
      pressColor: 'rgba(255, 255, 255, 0.16)',
  },
    {
      key: 'home',
-     icon: 'movie',
+     icon: 'first-order',
      label: 'Home',
      barColor: '#92b9b5',
      pressColor: 'rgba(255, 255, 255, 0.16)'
    },
    {
      key: 'flights',
-     icon: 'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/icons8-flugzeug-abflug-50.png',
+     icon: 'plane',
      label: 'Flights',
      barColor: '#6844A4',
      pressColor: 'rgba(255, 255, 255, 0.16)'
