@@ -33,7 +33,7 @@ tabs = [
    },
    {
      key: 'flights',
-     icon: 'music-note',
+     icon: 'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/icons8-flugzeug-abflug-50.png',
      label: 'Flights',
      barColor: '#6844A4',
      pressColor: 'rgba(255, 255, 255, 0.16)'
