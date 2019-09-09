@@ -14,7 +14,7 @@ export default class App extends Component {
 	componentDidMount() {
 		SplashScreen.close({
 			animationType: SplashScreen.animationType.scale,
-			duration: 2000,
+			duration: 5000,
 			delay: 300
 		});
 	}
