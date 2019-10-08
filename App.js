@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import BottomNavigation, { FullTab } from 'react-native-material-bottom-navigation';
 // import Toast from 'react-native-simple-toast';
@@ -19,9 +19,26 @@ export default class App extends Component {
 		});
 	}
 
-	state = {
-		activeTab: 'home'
-	};
+	constructor() {
+		super();
+		this.state = {
+			animating: false,
+			align: 'center',
+			alignsecond: false,
+			activeTab: 'intro'
+		};
+		setTimeout(
+			() =>
+				this.setState({ align: 'flex-start' }, function() {
+					this.setState({ alignsecond: true });
+				}),
+			3000
+		);
+	}
+
+	// state = {
+	// 	activeTab: 'home'
+	// };
 
 	color = '#A3CECA';
 
@@ -98,7 +115,37 @@ export default class App extends Component {
 		}
 	}
 
-	render() {
+	renderIntroView() {
+		<View
+			style={{
+				flex: 1,
+				alignItems: 'center',
+				flexDirection: 'column',
+				justifyContent: 'space-between',
+				marginHorizontal: 40
+			}}
+		>
+			<View style={{ marginTop: 120 }}>
+				<Text style={{ color: '#4A8538', fontSize: 25, fontFamily: 'Journal' }}>Land that we</Text>
+				<Text style={{ color: '#4A8538', fontSize: 25, fontFamily: 'Journal', textAlign: 'center' }}>love</Text>
+			</View>
+
+			{!this.state.alignsecond ? null : (
+				<Image
+					source={{
+						uri:
+							'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/android/app/src/main/assets/ufj_sl2.png'
+					}}
+					style={{ width: 150, height: 150, marginBottom: 100 }}
+				/>
+			)}
+		</View>;
+		setTimeout(() => {
+			this.setState({ activeTab: 'home' });
+		}, 1000);
+	}
+
+	renderWholeView() {
 		return (
 			<View style={{ flex: 1, backgroundColor: this.renderAppBackgroundColor() }}>
 				<Header
@@ -121,6 +168,21 @@ export default class App extends Component {
 			</View>
 		);
 	}
+
+	render() {
+		return ( 
+			
+		{state.activeTab ? 'intro' : ( 
+			this.renderWholeView()
+		)}
+
+
+		{!state.activeTab ? 'intro' : ( 
+			this.renderIntroView(); 
+			
+			)}
+
+		);
 }
 
 // const styles = {
