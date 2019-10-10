@@ -10,6 +10,14 @@ const data = [
 	},
 	{
 		id: 2,
+		title: 'Freetown',
+		content:
+			'The next day, there will be a brief introduction meeting before embarking on your tour of Freetown. With the driver and car at your disposal you will visit sites such as the St. Georges Cathedral, Railway Museum, National Museum, Maroon Church, Martello Tower and Fort Thornton (where the Presidential State House now stands). Return to your hotel to spend the night. See the full list of historical and heritage sites for more information. You will overnight in Freetown.',
+		image: 'https://skyticket.com/guide/wp-content/uploads/2017/12/iStock-642172632.jpg',
+		url: 'https://de.wikivoyage.org/wiki/Freetown'
+	},
+	{
+		id: 3,
 		title: 'Tacugama Chimpanzee Sanctuary Tour',
 		content:
 			'The work of the Sierra Leone Chimpanzee Rehabilitation Programme at Tacugama is definitely worth seeing. They started with a single chimpanzee and are now',
@@ -18,7 +26,7 @@ const data = [
 		url: 'https://www.tacugama.com/'
 	},
 	{
-		id: 3,
+		id: 4,
 		title: 'Banana Islands',
 		content:
 			'The Banana Islands are a group of islands that lie off the coast,south-west of the Freetown Peninsula in the Western Area of Sierra Leone.',
@@ -27,20 +35,12 @@ const data = [
 		url: 'https://bananaislandsierraleone.com/'
 	},
 	{
-		id: 4,
+		id: 5,
 		title: 'Bunce Island',
 		content:
 			'Bunce Island was the largest British slave castle on the Rice Coast of West Africa. This is a must-see for anyone interested in the history of the slave trade.',
 		image: 'https://media-cdn.tripadvisor.com/media/photo-s/01/14/3a/ee/ruins-on-bunce-island.jpg',
 		url: 'https://www.visitsierraleone.org/bunce-island/'
-	},
-	{
-		id: 5,
-		title: 'Freetown',
-		content:
-			'The next day, there will be a brief introduction meeting before embarking on your tour of Freetown. With the driver and car at your disposal you will visit sites such as the St. Georges Cathedral, Railway Museum, National Museum, Maroon Church, Martello Tower and Fort Thornton (where the Presidential State House now stands). Return to your hotel to spend the night. See the full list of historical and heritage sites for more information. You will overnight in Freetown.',
-		image: 'https://skyticket.com/guide/wp-content/uploads/2017/12/iStock-642172632.jpg',
-		url: 'https://de.wikivoyage.org/wiki/Freetown'
 	}
 ];
 
