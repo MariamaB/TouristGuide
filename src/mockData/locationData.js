@@ -39,7 +39,7 @@ const data = [
 		title: 'Freetown',
 		content:
 			'The next day, there will be a brief introduction meeting before embarking on your tour of Freetown. With the driver and car at your disposal you will visit sites such as the St. Georges Cathedral, Railway Museum, National Museum, Maroon Church, Martello Tower and Fort Thornton (where the Presidential State House now stands). Return to your hotel to spend the night. See the full list of historical and heritage sites for more information. You will overnight in Freetown.',
-		image: 'https://sierraloaded.net/wp-content/uploads/2016/06/Supreme-Court-SL.jpg',
+		image: 'https://skyticket.com/guide/wp-content/uploads/2017/12/iStock-642172632.jpg',
 		url: 'https://de.wikivoyage.org/wiki/Freetown'
 	}
 ];
