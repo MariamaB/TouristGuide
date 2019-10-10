@@ -11,34 +11,26 @@ import FlightList from './src/components/flights/FlightList';
 import SplashScreen from 'react-native-smart-splash-screen';
 
 export default class App extends Component {
-	componentDidMount() {
-		SplashScreen.close({
-			animationType: SplashScreen.animationType.scale,
-			duration: 5000,
-			delay: 300
-		});
-	}
-
 	constructor() {
 		super();
 		this.state = {
+			intro: true,
 			animating: false,
 			align: 'center',
 			alignsecond: false,
-			activeTab: 'intro'
+			activeTab: 'home'
 		};
 		setTimeout(
 			() =>
 				this.setState({ align: 'flex-start' }, function() {
 					this.setState({ alignsecond: true });
+					setTimeout(() => {
+						this.setState({ intro: false });
+					}, 3000);
 				}),
-			3000
+			2000
 		);
 	}
-
-	// state = {
-	// 	activeTab: 'home'
-	// };
 
 	color = '#A3CECA';
 
@@ -115,74 +107,62 @@ export default class App extends Component {
 		}
 	}
 
-	renderIntroView() {
-		<View
-			style={{
-				flex: 1,
-				alignItems: 'center',
-				flexDirection: 'column',
-				justifyContent: 'space-between',
-				marginHorizontal: 40
-			}}
-		>
-			<View style={{ marginTop: 120 }}>
-				<Text style={{ color: '#4A8538', fontSize: 25, fontFamily: 'Journal' }}>Land that we</Text>
-				<Text style={{ color: '#4A8538', fontSize: 25, fontFamily: 'Journal', textAlign: 'center' }}>love</Text>
-			</View>
-
-			{!this.state.alignsecond ? null : (
-				<Image
-					source={{
-						uri:
-							'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/android/app/src/main/assets/ufj_sl2.png'
-					}}
-					style={{ width: 150, height: 150, marginBottom: 100 }}
-				/>
-			)}
-		</View>;
-		setTimeout(() => {
-			this.setState({ activeTab: 'home' });
-		}, 1000);
-	}
-
-	renderWholeView() {
-		return (
-			<View style={{ flex: 1, backgroundColor: this.renderAppBackgroundColor() }}>
-				<Header
-					headerTitle={'Tourist Guide'}
-					headerText={'Sierra Leone'}
-					picSrc={'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/headerLogo2.png'}
-					headerColor={this.renderHeaderColor()}
-					headerTextColor={this.renderHeaderTextColor()}
-				/>
-
-				{this.renderView()}
-
-				<BottomNavigation
-					onTabPress={(newTab) => this.setState({ activeTab: newTab.key })}
-					activeTab={this.state.activeTab}
-					renderTab={this.renderTab}
-					tabs={this.tabs}
-					useLayoutAnimation
-				/>
-			</View>
-		);
-	}
-
 	render() {
-		return ( 
-			
-		{state.activeTab ? 'intro' : ( 
-			this.renderWholeView()
-		)}
+		if (this.state.intro) {
+			return (
+				<View
+					style={{
+						flex: 1,
+						alignItems: 'center',
+						flexDirection: 'column',
+						justifyContent: 'space-between',
+						marginHorizontal: 40
+					}}
+				>
+					<View style={{ marginTop: 120 }}>
+						<Text style={{ color: '#4A8538', fontSize: 25, fontFamily: 'Journal' }}>Land that we</Text>
+						<Text style={{ color: '#4A8538', fontSize: 25, fontFamily: 'Journal', textAlign: 'center' }}>
+							love
+						</Text>
+					</View>
 
+					{!this.state.alignsecond ? null : (
+						<Image
+							source={{
+								uri:
+									'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/android/app/src/main/assets/ufj_sl2.png'
+							}}
+							style={{ width: 150, height: 150, marginBottom: 100 }}
+						/>
+					)}
+				</View>
+			);
+		} else if (!this.state.intro) {
+			return (
+				<View style={{ flex: 1, backgroundColor: this.renderAppBackgroundColor() }}>
+					<Header
+						headerTitle={'Tourist Guide'}
+						headerText={'Sierra Leone'}
+						picSrc={
+							'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/headerLogo2.png'
+						}
+						headerColor={this.renderHeaderColor()}
+						headerTextColor={this.renderHeaderTextColor()}
+					/>
 
-		{!state.activeTab ? 'intro' : ( 
-			this.renderIntroView(); 
-			
-			)}
+					{this.renderView()}
 
-		);
+					<BottomNavigation
+						onTabPress={(newTab) => this.setState({ activeTab: newTab.key })}
+						activeTab={this.state.activeTab}
+						renderTab={this.renderTab}
+						tabs={this.tabs}
+						useLayoutAnimation
+					/>
+				</View>
+			);
+		}
+	}
 }
 
 // const styles = {
