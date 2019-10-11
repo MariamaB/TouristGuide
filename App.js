@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
+import Drawer from 'react-native-drawer';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import BottomNavigation, { FullTab } from 'react-native-material-bottom-navigation';
 // import Toast from 'react-native-simple-toast';
-import { Header } from './src/components/common/Header';
+import { Header } from './src/components/header/Header';
 import LocationList from './src/components/locations/LocationList';
 import HotelList from './src/components/hotels/HotelList';
 import FlightList from './src/components/flights/FlightList';
-
-import SplashScreen from 'react-native-smart-splash-screen';
+import SideMenu from './src/components/sideMenu/SideMenu';
 
 export default class App extends Component {
 	constructor() {
@@ -18,7 +18,8 @@ export default class App extends Component {
 			animating: false,
 			align: 'center',
 			alignsecond: false,
-			activeTab: 'home'
+			activeTab: 'home',
+			drawerOpen: false
 		};
 		setTimeout(
 			() =>
@@ -107,6 +108,18 @@ export default class App extends Component {
 		}
 	}
 
+	// onHamburgerClick() {
+	// 	return 'https://github.com/MariamaB/TouristGuide/blob/master/src/assets/burger_menu_icon.png';
+	// }
+
+	toggleDrawer() {
+		if (this.state.drawerOpen) {
+			this.setState({ drawerOpen: !this.state.drawerOpen });
+		} else {
+			this.setState({ drawerOpen: this.state.drawerOpen });
+		}
+	}
+
 	render() {
 		if (this.state.intro) {
 			return (
@@ -140,18 +153,33 @@ export default class App extends Component {
 		} else if (!this.state.intro) {
 			return (
 				<View style={{ flex: 1, backgroundColor: this.renderAppBackgroundColor() }}>
-					<Header
-						headerTitle={'Tourist Guide'}
-						headerText={'Sierra Leone'}
-						picSrc={
-							'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/headerLogo2.png'
-						}
-						headerColor={this.renderHeaderColor()}
-						headerTextColor={this.renderHeaderTextColor()}
-					/>
-
-					{this.renderView()}
-
+					<Drawer
+						open={true}
+						type="static"
+						tapToClose={true}
+						openDrawerOffset={0.5}
+						closedDrawerOffset={0}
+						content={<SideMenu />}
+						style={drawerStyles}
+						tweenHandler={Drawer.tweenPresets.parallax}
+						tweenEasing={'easeInOutQuad'}
+						tweenDuration={400}
+						onClose={this.closeDrawer}
+					>
+						<View style={{ flex: 1, backgroundColor: this.renderAppBackgroundColor() }}>
+							<Header
+								headerTitle={'Tourist Guide'}
+								headerText={'Sierra Leone'}
+								toggleDrawer={this.toggleDrawer}
+								picSrc={
+									'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/headerLogo2.png'
+								}
+								headerColor={this.renderHeaderColor()}
+								headerTextColor={this.renderHeaderTextColor()}
+							/>
+							{this.renderView()}
+						</View>
+					</Drawer>
 					<BottomNavigation
 						onTabPress={(newTab) => this.setState({ activeTab: newTab.key })}
 						activeTab={this.state.activeTab}
@@ -165,6 +193,10 @@ export default class App extends Component {
 	}
 }
 
+const drawerStyles = {
+	drawer: { shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3 },
+	main: { paddingLeft: 3 }
+};
 // const styles = {
 //   mainContentView:
 //     padding: 5
