@@ -31,8 +31,10 @@ export default class App extends Component {
 				}),
 			2000
 		);
-	}
 
+		this.toggleDrawer = this.toggleDrawer.bind(this);
+		this.closeDrawer = this.closeDrawer.bind(this);
+	}
 	color = '#A3CECA';
 
 	tabs = [
@@ -58,6 +60,19 @@ export default class App extends Component {
 			pressColor: 'rgba(255, 255, 255, 0.16)'
 		}
 	];
+
+	toggleDrawer() {
+		if (!this.state.drawerOpen) {
+			this.setState({ drawerOpen: true });
+			// Toast.show('Open Drawer set:' + this.state.drawerOpen, Toast.LONG);
+		}
+	}
+	closeDrawer() {
+		if (this.state.drawerOpen) {
+			this.setState({ drawerOpen: false });
+			// Toast.show('Close Dawer set:' + this.state.drawerOpen, Toast.LONG);
+		}
+	}
 
 	renderIcon = (icon) => ({ isActive }) => <Icon isActive={isActive} size={24} color="white" name={icon} />;
 
@@ -108,18 +123,6 @@ export default class App extends Component {
 		}
 	}
 
-	// onHamburgerClick() {
-	// 	return 'https://github.com/MariamaB/TouristGuide/blob/master/src/assets/burger_menu_icon.png';
-	// }
-
-	toggleDrawer() {
-		if (this.state.drawerOpen) {
-			this.setState({ drawerOpen: !this.state.drawerOpen });
-		} else {
-			this.setState({ drawerOpen: this.state.drawerOpen });
-		}
-	}
-
 	render() {
 		if (this.state.intro) {
 			return (
@@ -154,10 +157,10 @@ export default class App extends Component {
 			return (
 				<View style={{ flex: 1, backgroundColor: this.renderAppBackgroundColor() }}>
 					<Drawer
-						open={true}
+						open={this.state.drawerOpen}
 						type="static"
 						tapToClose={true}
-						openDrawerOffset={0.5}
+						openDrawerOffset={0.2}
 						closedDrawerOffset={0}
 						content={<SideMenu />}
 						style={drawerStyles}
@@ -170,7 +173,7 @@ export default class App extends Component {
 							<Header
 								headerTitle={'Tourist Guide'}
 								headerText={'Sierra Leone'}
-								toggleDrawer={this.toggleDrawer}
+								triggerToggleDrawer={this.toggleDrawer}
 								picSrc={
 									'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/headerLogo2.png'
 								}

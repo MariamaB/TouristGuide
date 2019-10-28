@@ -5,51 +5,70 @@ class SideMenu extends Component {
 	render() {
 		return (
 			<View style={this.styles.containerStyle}>
-				<View style={{}}>
+				{/* <View style={{ flex: 1, backgroundColor: '#F5F5F5' }}> */}
+				<Image
+					source={{ uri: 'http://www.sierra-leone.org/Photos/DSC_0059.jpg' }}
+					style={{ width: 300, height: 150 }}
+				/>
+				{/* </View> */}
+				<View style={{ flex: 2, marginTop: 20 }}>
+					<TouchableOpacity style={this.styles.borderStyle}>
+						<View style={{ flexDirection: 'row' }}>
+							<Image
+								style={this.styles.iconStyle}
+								source={{
+									uri:
+										'https://raw.githubusercontent.com/MariamaB/TouristGuide/feature/hamburger_menu/src/assets/home_icon.png'
+								}}
+							/>
+							<Text style={this.styles.textStyle}>Home</Text>
+						</View>
+					</TouchableOpacity>
+					<TouchableOpacity style={this.styles.borderStyle}>
+						<View style={{ flexDirection: 'row' }}>
+							<Image
+								style={this.styles.iconStyle}
+								source={{
+									uri:
+										'https://raw.githubusercontent.com/MariamaB/TouristGuide/feature/hamburger_menu/src/assets/home_icon.png'
+								}}
+							/>
+							<Text style={this.styles.textStyle}>Bookings</Text>
+						</View>
+					</TouchableOpacity>
+					<TouchableOpacity style={this.styles.borderStyle}>
+						<View style={{ flexDirection: 'row' }}>
+							<Image
+								style={this.styles.iconStyle}
+								source={{
+									uri:
+										'https://raw.githubusercontent.com/MariamaB/TouristGuide/feature/hamburger_menu/src/assets/home_icon.png'
+								}}
+							/>
+							<Text style={this.styles.textStyle}>Saved</Text>
+						</View>
+					</TouchableOpacity>
+				</View>
+
+				<View
+					style={{
+						flex: 1,
+						flexDirection: 'column',
+						alignItems: 'center',
+						justifyContent: 'flex-end'
+					}}
+				>
 					<Image
 						source={{
-							uri: 'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/SLlogo.png'
+							uri:
+								'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/android/app/src/main/assets/fingerprint_sl.png'
 						}}
-						style={{ width: '100%', height: '40%', backgroundColor: '#000' }}
+						style={{
+							width: 30,
+							height: 50
+						}}
 					/>
-				</View>
-				<View style={{ height: '80%' }}>
-					<TouchableOpacity style={this.styles.borderStyle}>
-						<View>
-							<Image
-								style={{ width: 30, height: 25 }}
-								source={{
-									uri:
-										'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/burger_menu_icon.png'
-								}}
-							/>
-							<Text>Home</Text>
-						</View>
-					</TouchableOpacity>
-					<TouchableOpacity style={this.styles.borderStyle}>
-						<View>
-							<Image
-								style={{ width: 30, height: 25 }}
-								source={{
-									uri:
-										'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/burger_menu_icon.png'
-								}}
-							/>
-							<Text>Bookings</Text>
-						</View>
-					</TouchableOpacity>
-					<TouchableOpacity style={this.styles.borderStyle}>
-						<View>
-							<Image
-								style={{ width: 30, height: 25 }}
-								source={{
-									uri:
-										'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/burger_menu_icon.png'
-								}}
-							/>
-							<Text>Saved</Text>
-						</View>
-					</TouchableOpacity>
+					<Text>&copy;Tourist Guide</Text>
 				</View>
 			</View>
 		);
@@ -60,10 +79,12 @@ class SideMenu extends Component {
 			// borderWidth: 1,
 			borderRadius: 2,
 			borderColor: '#ddd',
-			borderBottomWidth: 1
+			borderBottomWidth: 1,
+			height: 60,
+			justifyContent: 'center'
 		},
 		containerStyle: {
-			backgroundColor: '#CBCFCF',
+			backgroundColor: '#fff',
 			flex: 1,
 			borderWidth: 1,
 			borderRadius: 2,
@@ -75,6 +96,14 @@ class SideMenu extends Component {
 			shadowOpacity: 0.1,
 			shadowRadius: 2,
 			elevation: 1
+		},
+		textStyle: {
+			fontSize: 20,
+			justifyContent: 'center'
+		},
+		iconStyle: {
+			width: 30,
+			height: 25
 		}
 	};
 }
