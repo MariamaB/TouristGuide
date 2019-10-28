@@ -1,6 +1,9 @@
 import { TouchableOpacity, View, Image, Text } from 'react-native';
 import React, { Component } from 'react';
 import fPsl from '../../assets/logo/fingerprint_sl.png';
+import user from '../../assets/icons/b_user_male_100.png';
+import home from '../../assets/icons/home_icon_100.png';
+import fav from '../../assets/icons/favorie_icon_100.png';
 
 class SideMenu extends Component {
 	render() {
@@ -8,45 +11,32 @@ class SideMenu extends Component {
 			<View style={this.styles.containerStyle}>
 				{/* <View style={{ flex: 1, backgroundColor: '#F5F5F5' }}> */}
 				<Image
-					source={{ uri: 'http://www.sierra-leone.org/Photos/DSC_0059.jpg' }}
+					source={{
+						uri: 'http://www.sierra-leone.org/Photos/DSC_0059.jpg'
+					}}
 					style={{ width: 300, height: 150 }}
 				/>
 				{/* </View> */}
 				<View style={{ flex: 2, marginTop: 20 }}>
 					<TouchableOpacity style={this.styles.borderStyle}>
 						<View style={{ flexDirection: 'row' }}>
-							<Image
-								style={this.styles.iconStyle}
-								source={{
-									uri:
-										'https://raw.githubusercontent.com/MariamaB/TouristGuide/feature/hamburger_menu/src/assets/icons/home_icon.png'
-								}}
-							/>
+							<Image style={this.styles.iconStyle} source={user} />
+							<View style={this.styles.space} />
+							<Text style={this.styles.textStyle}>Profil</Text>
+						</View>
+					</TouchableOpacity>
+					<TouchableOpacity style={this.styles.borderStyle}>
+						<View style={{ flexDirection: 'row' }}>
+							<Image style={this.styles.iconStyle} source={home} />
+							<View style={this.styles.space} />
 							<Text style={this.styles.textStyle}>Home</Text>
 						</View>
 					</TouchableOpacity>
 					<TouchableOpacity style={this.styles.borderStyle}>
 						<View style={{ flexDirection: 'row' }}>
-							<Image
-								style={this.styles.iconStyle}
-								source={{
-									uri:
-										'https://raw.githubusercontent.com/MariamaB/TouristGuide/feature/hamburger_menu/src/assets/icons/home_icon.png'
-								}}
-							/>
-							<Text style={this.styles.textStyle}>Bookings</Text>
-						</View>
-					</TouchableOpacity>
-					<TouchableOpacity style={this.styles.borderStyle}>
-						<View style={{ flexDirection: 'row' }}>
-							<Image
-								style={this.styles.iconStyle}
-								source={{
-									uri:
-										'https://raw.githubusercontent.com/MariamaB/TouristGuide/feature/hamburger_menu/src/assets/icons/home_icon.png'
-								}}
-							/>
-							<Text style={this.styles.textStyle}>Saved</Text>
+							<Image style={this.styles.iconStyle} source={fav} />
+							<View style={this.styles.space} />
+							<Text style={this.styles.textStyle}>Favorite</Text>
 						</View>
 					</TouchableOpacity>
 				</View>
@@ -79,7 +69,8 @@ class SideMenu extends Component {
 			borderColor: '#ddd',
 			borderBottomWidth: 1,
 			height: 60,
-			justifyContent: 'center'
+			justifyContent: 'center',
+			marginLeft: 10
 		},
 		containerStyle: {
 			backgroundColor: '#fff',
@@ -97,11 +88,18 @@ class SideMenu extends Component {
 		},
 		textStyle: {
 			fontSize: 20,
-			justifyContent: 'center'
+			justifyContent: 'center',
+			alignSelf: 'center'
 		},
 		iconStyle: {
-			width: 30,
-			height: 25
+			width: 50,
+			height: 50
+		},
+		menuItem: {
+			flexDirection: 'row'
+		},
+		space: {
+			marginRight: '5%'
 		}
 	};
 }
