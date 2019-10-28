@@ -1,25 +1,36 @@
 // Import libraries for making a component
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { CardSection } from './CardSection';
 
 // Make a component
 const Header = (props) => {
 	const { thumbnailStyle, headerContentStyles, thumbnailContainerStyle, spaceholderStyle } = styles;
 
-	const {
-		// headerColor,
-		headerText,
-		headerTitle,
-		headerTextColor,
-		picSrc,
-		headerColor
-	} = props;
+	const { headerText, headerTitle, headerTextColor, picSrc, headerColor, toggleDrawer } = props;
 
 	return (
 		<View style={{ backgroundColor: headerColor }}>
 			<CardSection>
-				<View style={spaceholderStyle} />
+				<TouchableOpacity
+					onPress={toggleDrawer}
+					style={{
+						alignContent: 'center',
+						justifyContent: 'space-around',
+						flex: 1,
+						marginLeft: 10,
+						width: 'auto',
+						height: 'auto'
+					}}
+				>
+					<Image
+						style={{ width: 30, height: 30 }}
+						source={{
+							uri:
+								'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/burger_menu_icon.png'
+						}}
+					/>
+				</TouchableOpacity>
 
 				<View style={headerContentStyles}>
 					<Text
