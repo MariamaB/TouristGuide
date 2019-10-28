@@ -1,5 +1,6 @@
 import { TouchableOpacity, View, Image, Text } from 'react-native';
 import React, { Component } from 'react';
+import fPsl from '../../assets/logo/fingerprint_sl.png';
 
 class SideMenu extends Component {
 	render() {
@@ -18,7 +19,7 @@ class SideMenu extends Component {
 								style={this.styles.iconStyle}
 								source={{
 									uri:
-										'https://raw.githubusercontent.com/MariamaB/TouristGuide/feature/hamburger_menu/src/assets/home_icon.png'
+										'https://raw.githubusercontent.com/MariamaB/TouristGuide/feature/hamburger_menu/src/assets/icons/home_icon.png'
 								}}
 							/>
 							<Text style={this.styles.textStyle}>Home</Text>
@@ -30,7 +31,7 @@ class SideMenu extends Component {
 								style={this.styles.iconStyle}
 								source={{
 									uri:
-										'https://raw.githubusercontent.com/MariamaB/TouristGuide/feature/hamburger_menu/src/assets/home_icon.png'
+										'https://raw.githubusercontent.com/MariamaB/TouristGuide/feature/hamburger_menu/src/assets/icons/home_icon.png'
 								}}
 							/>
 							<Text style={this.styles.textStyle}>Bookings</Text>
@@ -42,7 +43,7 @@ class SideMenu extends Component {
 								style={this.styles.iconStyle}
 								source={{
 									uri:
-										'https://raw.githubusercontent.com/MariamaB/TouristGuide/feature/hamburger_menu/src/assets/home_icon.png'
+										'https://raw.githubusercontent.com/MariamaB/TouristGuide/feature/hamburger_menu/src/assets/icons/home_icon.png'
 								}}
 							/>
 							<Text style={this.styles.textStyle}>Saved</Text>
@@ -59,10 +60,7 @@ class SideMenu extends Component {
 					}}
 				>
 					<Image
-						source={{
-							uri:
-								'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/android/app/src/main/assets/fingerprint_sl.png'
-						}}
+						source={fPsl}
 						style={{
 							width: 30,
 							height: 50
