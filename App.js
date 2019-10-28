@@ -174,9 +174,9 @@ export default class App extends Component {
 								headerTitle={'Tourist Guide'}
 								headerText={'Sierra Leone'}
 								triggerToggleDrawer={this.toggleDrawer}
-								picSrc={
-									'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/headerLogo2.png'
-								}
+								// picSrc={
+								// 	'https://raw.githubusercontent.com/MariamaB/TouristGuide/master/src/assets/headerLogo2.png'
+								// }
 								headerColor={this.renderHeaderColor()}
 								headerTextColor={this.renderHeaderTextColor()}
 							/>
